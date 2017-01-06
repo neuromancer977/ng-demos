@@ -26,7 +26,7 @@
         function getAvengers() {
             return dataservice.getAvengers().then(function(data) {
                 vm.avengers = data;
-                return vm.avengers;
+                //return vm.avengers; ??
             });
         }
     }
