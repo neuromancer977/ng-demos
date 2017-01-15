@@ -6,8 +6,9 @@
                     <div data-cc-widget-header title="{{vm.title}}"></div>
                     <div class="widget-content user">
                         <!--<pre>{{vm.avengers.data | json}}</pre>-->
-
-                        <input ng-model="vm.filter.name" placeholder="Find Avengers by name" type="search"/>
+                        
+                        <!--filter by description: avenger.description-->
+                        <input ng-model="vm.filter.description" placeholder="Find Avengers by DESCRIPTION!!!" type="search"/>
                         <table class="table table-condensed table-striped">
                             <thead>
                             <tr>
@@ -17,7 +18,8 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr ng-repeat="c in vm.avengers | filter:vm.filter track by c.id">
+                            <!--filter by description: c = avenger.description-->
+                            <tr ng-repeat="c in vm.avengers | filter:vm.filter.description track by c.id">
                                 <td><img
                                         ng-src="{{c.thumbnail.path}}.{{c.thumbnail.extension}}"
                                         class="avenger-thumb img-rounded"/></td>
